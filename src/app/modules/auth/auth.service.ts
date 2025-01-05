@@ -28,10 +28,12 @@ const Login = async (payload: TLoginUser) => {
     _id: Types.ObjectId | undefined // Assuming you want to use string for _id in the JWT payload
     role: string | undefined
     email: string | undefined
+    username: string | undefined
   } = {
     _id: find?._id,
     role: find?.role,
     email: find?.email,
+    username: find?.username,
   }
   const accessToken = createAccessToken(
     jwtPayload,
